@@ -2,8 +2,15 @@
   "manifest_version": 2,
 
   "name": "ESPN Fantasy NBA Stat Totals",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get total stats for your team on your team page.",
+
+  "content_scripts": [
+  {
+  "matches": ["http://games.espn.go.com/fba/*"],
+  "js": [ "jquery-1.11.1.js", "fantasy_team_stats.js"]
+  }
+],
 
   "icons": {
     "128" : "icon-128.png"
@@ -13,8 +20,10 @@
 	"default_icon": "icon-128.png"
   },
 
-  "background": { "page": "background.html" },
-  "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+  "background": { 
+    "scripts": ["jquery-1.11.1.js", "background.js"] 
+  },
 
-  "web_accessible_resources": [ "fantasy_team_stats.js" ]
+  "permissions": [ "tabs", "http://games.espn.go.com/fba/*", "https://games.espn.go.com/fba/*" ]
+
 }
