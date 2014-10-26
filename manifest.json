@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "ESPN Fantasy NBA Stat Totals",
+  "version": "1.0.0",
+  "description": "Get total stats for your team on your team page.",
+
+  "icons": {
+    "128" : "icon-128.png"
+  },
+
+  "browser_action": {
+	"default_icon": "icon-128.png"
+  },
+
+  "background": { "page": "background.html" },
+  "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+
+  "web_accessible_resources": [ "fantasy_team_stats.js" ]
+}
